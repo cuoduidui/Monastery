@@ -8,7 +8,7 @@ import java.util.List;
  * @author yangfengshan
  * @create 2019-06-21 9:10
  **/
-public class ArrayList {
+public class ArrayListTest {
     public static void main(String[] args){
         //数组可以指定位置存放 只有不超过数组长度
         int[] zu=new int[2];
@@ -25,6 +25,7 @@ public class ArrayList {
         list.add(4);
         //移除操作后 数组后面的数值往前移动
         list.remove(2);
+        //数组 插入时会移动数据  查询时直接按照下标查找
         System.out.println(list.get(2));
     }
 }
