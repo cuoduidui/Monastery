@@ -13,7 +13,7 @@ public class ArrayListTest {
         //数组可以指定位置存放 只有不超过数组长度
         int[] zu=new int[2];
         zu[1]=10;
-        System.out.println(zu[1]);
+        System.out.println(zu[0]);
         List list=new java.util.ArrayList(10);
         //ArrayList 只有操作就会抛出 IndexOutOfBoundsException
         //ArrayList 插入操作时校验数组内的数据
