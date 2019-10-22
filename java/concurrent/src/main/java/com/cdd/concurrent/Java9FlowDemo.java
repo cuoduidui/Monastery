@@ -1,12 +1,13 @@
 package com.cdd.concurrent;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Flow;
+import java.util.concurrent.SubmissionPublisher;
+import java.util.concurrent.TimeUnit;
 
 public class Java9FlowDemo {
 
     public static void main(String[] args) throws InterruptedException {
-
-        // Java 7 try-catch 语法
 
         try (SubmissionPublisher<String> publisher = new SubmissionPublisher<>()) {
 

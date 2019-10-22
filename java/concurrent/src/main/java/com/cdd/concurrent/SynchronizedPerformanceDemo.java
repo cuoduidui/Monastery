@@ -1,6 +1,7 @@
 package com.cdd.concurrent;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 import java.util.function.Consumer;
@@ -12,7 +13,6 @@ public class SynchronizedPerformanceDemo {
         // 相同点：两者都使用数组（Array）作为存储，集合算法类似
         Vector vector = new Vector();
         ArrayList list = new ArrayList();
-
         doTest(10000, vector);
         doTest(10000, list);
 
