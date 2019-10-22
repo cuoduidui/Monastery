@@ -13,8 +13,6 @@
         <module>collection</module>
         <module>concurrent</module>
     </modules>
-
-
     <build>
         <plugins>
             <!-- 编译plugin -->
