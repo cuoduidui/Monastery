@@ -82,7 +82,7 @@ public class StreamTest {
         Stream<Integer> stream2 = intStream.boxed();
 
         // Stream API提供了两个静态方法来从函数生成流： Stream.iterate和Stream.generate。
-        Stream.iterate(0, n -> n + 2)
+        Stream.iterate(0, (n) -> n + 2)
                 .limit(10)
                 .forEach(System.out::println);
         //iterate方法接受一个初始值（在这里是0），还有一个依次应用在每个产生的新值上的

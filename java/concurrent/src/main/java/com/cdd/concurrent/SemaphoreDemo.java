@@ -32,6 +32,6 @@ public class SemaphoreDemo {
                     });
                 }
         );
-
+        service.shutdown();
     }
 }
