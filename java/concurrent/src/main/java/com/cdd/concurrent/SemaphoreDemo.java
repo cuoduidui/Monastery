@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 public class SemaphoreDemo {
     private static Semaphore semaphore = new Semaphore(10);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         ExecutorService service = Executors.newFixedThreadPool(100);
         Stream.iterate(1, i -> i++).limit(100).forEach(
                 (i) -> {
@@ -33,5 +33,6 @@ public class SemaphoreDemo {
                 }
         );
         service.shutdown();
+//        Thread.sleep(Integer.MAX_VALUE);
     }
 }
