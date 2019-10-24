@@ -9,5 +9,6 @@ public class ProcessCreationQuestion {
         Runtime runtime = Runtime.getRuntime();
         Process process = runtime.exec("cmd /k start http://www.baidu.com");
         process.exitValue();
+//        System.out.println(process.exitValue());
     }
 }
