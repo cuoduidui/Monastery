@@ -40,6 +40,17 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--maven打jar包时spring-boot所依赖自己的插件依赖-->
+        <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-loader-tools</artifactId>
+             <version>2.2.0.RELEASE</version>
+         </dependency>
+         <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-loader</artifactId>
+         <version>2.2.0.RELEASE</version>
+         </dependency>-->
     </dependencies>
 
     <build>
