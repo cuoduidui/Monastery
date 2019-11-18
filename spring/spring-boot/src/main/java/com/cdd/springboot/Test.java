@@ -1,6 +1,8 @@
 package com.cdd.springboot;
 
+import com.cdd.springboot.demo.Test1;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AliasFor;
@@ -29,4 +31,7 @@ import org.springframework.stereotype.Indexed;
  **/
 @SpringBootApplication
 public class Test {
+    public static void main(String[] args) {
+        SpringApplication.run(Test.class, args);
+    }
 }
