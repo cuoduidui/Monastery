@@ -15,6 +15,28 @@
             <version>3.9</version>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.67</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.security.auth</groupId>
+            <artifactId>authsdk-common</artifactId>
+            <version>1.0.RELEASE</version>
+        </dependency>
+        <!-- 京东基础工具类 -->
+        <!--<dependency>
+            <groupId>com.jd.common</groupId>
+            <artifactId>jd-common-util</artifactId>
+            <version>1.1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>-->
+        <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>3.14</version>
@@ -24,6 +46,11 @@
             <groupId>net.sourceforge.jexcelapi</groupId>
             <artifactId>jxl</artifactId>
             <version>2.6.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.11</version>
         </dependency>
     </dependencies>
     <build>

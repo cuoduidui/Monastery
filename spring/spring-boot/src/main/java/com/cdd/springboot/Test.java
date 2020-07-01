@@ -1,12 +1,16 @@
 package com.cdd.springboot;
 
 import com.cdd.springboot.demo.Test1;
+import com.cdd.springboot.demo.Test2;
+import com.cdd.springboot.demo.Test3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Indexed;
+
+import java.lang.annotation.Annotation;
 
 /**
  * 测试springbootapplication注解是否只能在启动类上
@@ -33,5 +37,10 @@ import org.springframework.stereotype.Indexed;
 public class Test {
     public static void main(String[] args) {
         SpringApplication.run(Test.class, args);
+//        Annotation[] annotations=Test3.class.getAnnotations();
+//        System.out.println(annotations);
+//
+//        Annotation[] Test2annotations= Test2.class.getAnnotations();
+//        System.out.println(Test2annotations);
     }
 }
