@@ -35,12 +35,12 @@ import java.lang.annotation.Annotation;
  **/
 @SpringBootApplication
 public class Test {
-    public static void main(String[] args) {
-        SpringApplication.run(Test.class, args);
-//        Annotation[] annotations=Test3.class.getAnnotations();
-//        System.out.println(annotations);
-//
-//        Annotation[] Test2annotations= Test2.class.getAnnotations();
-//        System.out.println(Test2annotations);
-    }
+//    public static void main(String[] args) {
+//        SpringApplication.run(Test.class, args);
+////        Annotation[] annotations=Test3.class.getAnnotations();
+////        System.out.println(annotations);
+////
+////        Annotation[] Test2annotations= Test2.class.getAnnotations();
+////        System.out.println(Test2annotations);
+//    }
 }
