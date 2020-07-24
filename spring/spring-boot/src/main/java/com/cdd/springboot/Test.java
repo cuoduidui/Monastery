@@ -6,11 +6,16 @@ import com.cdd.springboot.demo.Test3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.AliasFor;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Indexed;
 
 import java.lang.annotation.Annotation;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 测试springbootapplication注解是否只能在启动类上
@@ -33,7 +38,7 @@ import java.lang.annotation.Annotation;
  * @author cuoduidui
  * @date 2019-11-11 23:55
  **/
-@SpringBootApplication
+@SpringBootApplication()
 public class Test {
 //    public static void main(String[] args) {
 //        SpringApplication.run(Test.class, args);
@@ -43,4 +48,17 @@ public class Test {
 ////        Annotation[] Test2annotations= Test2.class.getAnnotations();
 ////        System.out.println(Test2annotations);
 //    }
+
+    @Bean
+    public String getSpringBootApplication(ApplicationContext applicationContext) {
+        Test2 test2 = applicationContext.getBean(Test2.class);
+//        Test3 test3 = applicationContext.getBean(Test3.class);
+        String[] strings = applicationContext.getBeanNamesForAnnotation(Component.class);
+        Map<String, Object> beans = applicationContext.getBeansWithAnnotation(Test1.class);
+//        test2.equals("1");
+        Annotation[] annotations = Test3.class.getAnnotations();
+        String test1Beans = beans.keySet().stream().collect(Collectors.joining(","));
+        System.out.println(test1Beans);
+        return "1";
+    }
 }
