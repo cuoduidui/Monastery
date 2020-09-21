@@ -6,7 +6,7 @@ import org.springframework.context.annotation.FilterType;
 
 //@SpringBootApplication
 @Configuration
-@ComponentScan(basePackages = "com.cdd.springboot.demo", includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Test1.class))
+@ComponentScan(basePackages = "com.cdd.springboot.demo", includeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Test1.class), useDefaultFilters = false)
 public class Application {
     //扫描自定义注解加入到spring bean容器中
 //    @Bean

@@ -4,7 +4,6 @@ import com.cdd.springboot.demo.Test1;
 import com.cdd.springboot.demo.Test2;
 import com.cdd.springboot.demo.Test3;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +13,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Indexed;
 
 import java.lang.annotation.Annotation;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -27,27 +28,41 @@ import java.util.stream.Collectors;
  * 当 Spring 应用上下文执行 @CompoentScan 扫描时，METE-INF/spring.components 将被 CandidateComponentsIndexLoader 读取并加载，
  * 转化为 CandidateComponentsIndex 对象，进而 @CompoentScan 不再扫描指定的 package，而是读取 CandidateComponentsIndex 对象，从而达到提升性能的目的。
  * {@link Configuration#proxyBeanMethods()}
- *
+ * <p>
  * {@link Autowired Inject Resource}1、@Autowired是spring自带的，@Inject是JSR330规范实现的，@Resource是JSR250规范实现的，需要导入不同的包
- *
+ * <p>
  * 2、@Autowired、@Inject用法基本一样，不同的是@Autowired有一个request属性
- *
+ * <p>
  * 3、@Autowired、@Inject是默认按照类型匹配的，@Resource是按照名称匹配的
- *
+ * <p>
  * 4、@Autowired如果需要按照名称匹配需要和@Qualifier一起使用，@Inject和@Name一起使用
+ *
  * @author cuoduidui
  * @date 2019-11-11 23:55
  **/
 @SpringBootApplication()
 public class Test {
-//    public static void main(String[] args) {
-//        SpringApplication.run(Test.class, args);
-////        Annotation[] annotations=Test3.class.getAnnotations();
-////        System.out.println(annotations);
-////
-////        Annotation[] Test2annotations= Test2.class.getAnnotations();
-////        System.out.println(Test2annotations);
-//    }
+    public static void main(String[] args) {
+        List<Integer> parray = new ArrayList();
+        List<Integer> pcounter = new ArrayList<>();
+        prime(parray, pcounter, 2, 100);
+        parray.forEach(System.out::println);
+//        pcounter.forEach(System.out::println);
+    }
+
+    private static void prime(List<Integer> parray, List<Integer> pcounter, int i, int b) {
+        if (i > 2) {
+            for (int j = i - 1; j > 1; j--) {
+                if (i % j == 0) {
+                    pcounter.add(i);
+                    if (i < b) prime(parray, pcounter, i + 1, b);
+                    return;
+                }
+            }
+        }
+        parray.add(i);
+        if (i < b) prime(parray, pcounter, i + 1, b);
+    }
 
     @Bean
     public String getSpringBootApplication(ApplicationContext applicationContext) {
